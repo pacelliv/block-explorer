@@ -20,10 +20,8 @@ export const generateMetadata = ({ params: { number } }: Params) => {
 }
 
 const BlockPage = async ({ params: { number } }: Params) => {
-    console.log(number)
     const blockData: Promise<Block> = getBlock("0x" + Number(number).toString(16))
     const block = await blockData
-    console.log(block)
     const percentage = ((parseInt(block.gasUsed, 16) * 100) / parseInt(block.gasLimit, 16)).toFixed(2)
 
     return (
