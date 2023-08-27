@@ -16,9 +16,9 @@ This block explorer is a minimal replica of Etherscan that provides real-time in
 
 Features:
 
-1. Home Page: The central hub showcases a table with the latest 50 Ethereum blocks, powered by TanStack Table. Easy navigation, advanced filtering, and sorting options help users access essential block data like block number, miner, gas usage, and timestamp.
+1. Home Page: Showcases a table with the latest 50 Ethereum blocks, built with TanStack Table. Help users to view essential block data like block number, miner, gas usage, and timestamp.
 
-2. Block Page: View detailed information on individual blocks, including gas limits, receipts root, and transaction root. Luxon ensures time data is presented in a user-friendly format, enhancing comprehension.
+2. Block Page: Shows detailed information on individual blocks, including gas limits, receipts root, and transaction root. Luxon ensures time data is presented in a user-friendly format, enhancing comprehension.
 
 3. JSON-RPC API Integration: Used to interact with the Ethereum blockchain, fetching accurate and up-to-date block data.
 
