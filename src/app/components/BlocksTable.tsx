@@ -111,7 +111,7 @@ const BlocksTable = ({ params: { tableData } }: Params) => {
         columnHelper.accessor("gasUsed", {
             header: () => "Gas Used",
             cell: (info) => (
-                <div style={{ padding: "0", width: "205px" }}>
+                <div style={{ padding: "0", width: "210px" }}>
                     <div style={{ padding: "0" }}>
                         <span>{info.getValue().gasUsed.toLocaleString("en")}</span>
                         <span style={{ color: "gray" }}>
