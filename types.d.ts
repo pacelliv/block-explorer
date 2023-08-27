@@ -56,7 +56,7 @@ type Block = {
     transactions: string[] | []
     transactionsRoot: string
     uncles: []
-    withdrawals: Withdrawals[]
+    withdrawals: Withdrawals[] | []
     withdrawalsRoot: string
 }
 
