@@ -67,7 +67,9 @@ const BlockPage = async ({ params: { number } }: Params) => {
                         <span>Withdrawals: </span>
                     </div>
                     <div>
-                        <span>{block.withdrawals.length} withdrawals in this block</span>
+                        <span>
+                            {block.withdrawals.length > 0 ? block.withdrawals.length : ""} withdrawals in this block
+                        </span>
                     </div>
                 </HeaderDiv>
                 <Divider />
