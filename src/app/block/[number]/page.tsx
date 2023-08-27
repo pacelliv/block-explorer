@@ -68,7 +68,7 @@ const BlockPage = async ({ params: { number } }: Params) => {
                     </div>
                     <div>
                         <span>
-                            {block.withdrawals.length > 0 ? block.withdrawals.length : ""} withdrawals in this block
+                            {block.withdrawals !== undefined ? block.withdrawals.length : 0} withdrawals in this block
                         </span>
                     </div>
                 </HeaderDiv>
@@ -127,10 +127,16 @@ const BlockPage = async ({ params: { number } }: Params) => {
                         <span>Base Fee Per Gas: </span>
                     </div>
                     <div>
-                        <span>{ethers.formatUnits(BigInt(block.baseFeePerGas), "ether")} ETH</span>{" "}
-                        <span style={{ color: "gray" }}>
-                            ({ethers.formatUnits(BigInt(block.baseFeePerGas), "gwei")} Gwei)
-                        </span>
+                        {block.baseFeePerGas !== undefined ? (
+                            <>
+                                <span>{ethers.formatUnits(BigInt(block.baseFeePerGas), "ether")} ETH</span>{" "}
+                                <span style={{ color: "gray" }}>
+                                    ({ethers.formatUnits(BigInt(block.baseFeePerGas), "gwei")} Gwei)
+                                </span>
+                            </>
+                        ) : (
+                            "No base fee in this block"
+                        )}
                     </div>
                 </HeaderDiv>
                 <HeaderDiv>
@@ -138,16 +144,22 @@ const BlockPage = async ({ params: { number } }: Params) => {
                         <AiOutlineQuestionCircle style={{ fontSize: "16px" }} />
                         <span>Burnt Fees: </span>
                     </div>
-                    <div>
-                        <span>
-                            🔥{" "}
-                            {ethers.formatUnits(
-                                (BigInt(block.baseFeePerGas) * BigInt(block.gasUsed)).toString(),
-                                "ether",
-                            )}{" "}
-                            ETH
-                        </span>{" "}
-                    </div>
+                    {block.baseFeePerGas !== undefined ? (
+                        <>
+                            <div>
+                                <span>
+                                    🔥{" "}
+                                    {ethers.formatUnits(
+                                        (BigInt(block.baseFeePerGas) * BigInt(block.gasUsed)).toString(),
+                                        "ether",
+                                    )}{" "}
+                                    ETH
+                                </span>{" "}
+                            </div>
+                        </>
+                    ) : (
+                        "Zero burnt fees for this block"
+                    )}
                 </HeaderDiv>
             </Container>
             <Container>
@@ -184,7 +196,11 @@ const BlockPage = async ({ params: { number } }: Params) => {
                         <span>Withdrawals Root: </span>
                     </div>
                     <div>
-                        <span>{block.withdrawalsRoot}</span>
+                        <span>
+                            {block.withdrawalsRoot !== undefined
+                                ? block.withdrawalsRoot
+                                : "No withdrawals root for this block"}
+                        </span>
                     </div>
                 </HeaderDiv>
                 <HeaderDiv>
