@@ -135,7 +135,7 @@ const BlockPage = async ({ params: { number } }: Params) => {
                                 </span>
                             </>
                         ) : (
-                            "No base fee in this block"
+                            "Pre-London blocks doesn't include base fee"
                         )}
                     </div>
                 </HeaderDiv>
@@ -155,7 +155,7 @@ const BlockPage = async ({ params: { number } }: Params) => {
                                 ETH
                             </span>
                         ) : (
-                            "No base fees for this block"
+                            "Pre-London blocks doesn't include burnt fees"
                         )}
                     </div>
                 </HeaderDiv>
