@@ -20,8 +20,10 @@ export const generateMetadata = ({ params: { number } }: Params) => {
 }
 
 const BlockPage = async ({ params: { number } }: Params) => {
+    console.log(number)
     const blockData: Promise<Block> = getBlock("0x" + Number(number).toString(16))
     const block = await blockData
+    console.log(block)
     const percentage = ((parseInt(block.gasUsed, 16) * 100) / parseInt(block.gasLimit, 16)).toFixed(2)
 
     return (
@@ -144,22 +146,20 @@ const BlockPage = async ({ params: { number } }: Params) => {
                         <AiOutlineQuestionCircle style={{ fontSize: "16px" }} />
                         <span>Burnt Fees: </span>
                     </div>
-                    {block.baseFeePerGas !== undefined ? (
-                        <>
-                            <div>
-                                <span>
-                                    🔥{" "}
-                                    {ethers.formatUnits(
-                                        (BigInt(block.baseFeePerGas) * BigInt(block.gasUsed)).toString(),
-                                        "ether",
-                                    )}{" "}
-                                    ETH
-                                </span>{" "}
-                            </div>
-                        </>
-                    ) : (
-                        "Zero burnt fees for this block"
-                    )}
+                    <div>
+                        {block.baseFeePerGas !== undefined ? (
+                            <span>
+                                🔥{" "}
+                                {ethers.formatUnits(
+                                    (BigInt(block.baseFeePerGas) * BigInt(block.gasUsed)).toString(),
+                                    "ether",
+                                )}{" "}
+                                ETH
+                            </span>
+                        ) : (
+                            "No base fees for this block"
+                        )}
+                    </div>
                 </HeaderDiv>
             </Container>
             <Container>
