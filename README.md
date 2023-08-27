@@ -1,6 +1,6 @@
 ## Week 3 project - Block Explorer 🔍
 
-### Introduction
+### Introduction 👩‍🏫👨‍🏫
 
 From ethereum.org [docs](https://ethereum.org/en/developers/docs/apis/json-rpc/):
 
@@ -10,7 +10,25 @@ From ethereum.org [docs](https://ethereum.org/en/developers/docs/apis/json-rpc/)
 
 > JSON-RPC is a stateless, light-weight remote procedure call (RPC) protocol. It defines several data structures and the rules around their processing. It is transport agnostic in that the concepts can be used within the same process, over sockets, over HTTP, or in many various message passing environments. It uses JSON (RFC 4627) as data format.
 
-This block explorer is a minimalistic replica of [Etherscan](https://etherscan.io) to implement JSON-RPC calls to query block data.
+### Description 🌌
+
+This block explorer is a minimal replica of Etherscan that provides real-time insights into the blocks of the Ethereum blockchain. Leveraging a stack of powerful technologies including JSON-RPC API, CoinGecko API, TanStack Table, ethers v6, Next.js, luxon, TypeScript, and Styled Components, this project delivers an efficient and user-friendly platform for users to explore Ethereum blocks.
+
+Features:
+
+1. Home Page: The central hub showcases a table with the latest 50 Ethereum blocks, powered by TanStack Table. Easy navigation, advanced filtering, and sorting options help users access essential block data like block number, miner, gas usage, and timestamp.
+
+2. Block Page: View detailed information on individual blocks, including gas limits, receipts root, and transaction root. Luxon ensures time data is presented in a user-friendly format, enhancing comprehension.
+
+3. JSON-RPC API Integration: Used to interact with the Ethereum blockchain, fetching accurate and up-to-date block data.
+
+4. CoinGecko API: Fetch the current Ether price from CoinGecko API, offering context to transaction values and gas fees.
+
+5. Ethers v6 Library: Interact directly with Ethereum blockchain, to retrieve validator's ENS and to handle the units of numbers.
+
+6. Next.js and TypeScript: Enhance efficiency and maintainability with Next.js and TypeScript. Enjoy server-side rendering and improved page loading times.
+
+7. Styled Components: Used to create customizable React Components elements.
 
 ### Quick Start 🏃‍♀️🏃
 
