@@ -35,7 +35,7 @@ type Withdrawals = {
 }
 
 type Block = {
-    baseFeePerGas: string
+    baseFeePerGas?: string
     difficulty: string
     extraData: string
     gasLimit: string
@@ -56,8 +56,8 @@ type Block = {
     transactions: string[] | []
     transactionsRoot: string
     uncles: []
-    withdrawals: Withdrawals[] | []
-    withdrawalsRoot: string
+    withdrawals?: Withdrawals[] | []
+    withdrawalsRoot?: string
 }
 
 type BlockTime = {
